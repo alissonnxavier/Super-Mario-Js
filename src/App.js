@@ -57,17 +57,6 @@ const scoreLabel = k.add([
   }
 ])
 
-var block = k.add([
-  k.sprite('blockOrange'),
-  k.pos(50, 200),
-  k.area(),
-  k.body(),
-  k.vec2(3),
-  k.health(8),
-  k.solid(),
-]);
-
-
 function big(){
 
   return{
@@ -235,7 +224,6 @@ player.on('headbutt', (obj)=>{
 
   if(obj.is('surpriseCoin')){
     gameLevel.spawn('$', obj.gridPos.sub(0,1));
-    var mush = gameLevel.spawn('0', obj.gridPos.sub(0,0))
     k.destroy(obj);
   }
   
